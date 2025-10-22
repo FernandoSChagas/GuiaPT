@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emprego em Portugal - Guia do Imigrante</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cor-principal: #2d3748;
+            --cor-secundaria: #4a5568;
+            --cor-acento: #38b2ac;
+            --cor-fundo: #f7fafc;
+            --cor-branco: #ffffff;
+            --sombra-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-secundaria);
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        .navbar {
+            background-color: var(--cor-branco);
+            padding: 15px 20px;
+            box-shadow: var(--sombra-card);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a.home-link {
+            color: var(--cor-principal);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .main-container {
+            max-width: 950px;
+            margin: 40px auto;
+            padding: 0 20px;
+            min-height: 60vh;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: var(--cor-principal);
+            margin-bottom: 30px;
+            border-bottom: 3px solid var(--cor-acento);
+            padding-bottom: 10px;
+        }
+        
+        #nav-regioes {
+            background-color: var(--cor-branco);
+            padding: 15px 10px;
+            text-align: center;
+            position: sticky;
+            top: 60px; /* Abaixo da navbar principal */
+            z-index: 999;
+            box-shadow: var(--sombra-card);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        #nav-regioes a {
+            color: var(--cor-secundaria);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 8px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        #nav-regioes a:hover {
+            color: var(--cor-acento);
+            background-color: #e6fffa;
+        }
+
+        #nav-regioes a.active {
+            color: var(--cor-acento);
+            border-color: var(--cor-acento);
+            background-color: #f0fdfa;
+        }
+
+        section { display: none; animation: fadeIn 0.5s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        section.active { display: block; }
+        
+        section h2 { font-size: 1.8rem; color: var(--cor-principal); margin-bottom: 30px; display: inline-block; }
+
+        .agencia {
+            background-color: var(--cor-branco);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: var(--sombra-card);
+            border-left: 5px solid var(--cor-acento);
+        }
+
+        .agencia strong { font-size: 1.4rem; color: var(--cor-principal); font-weight: 600; display: block; margin-bottom: 15px; }
+        .agencia p { margin: 8px 0; display: flex; align-items: center; gap: 12px; font-size: 0.95rem; }
+        .agencia p em { font-style: italic; color: #718096; }
+        .agencia p svg { width: 18px; height: 18px; flex-shrink: 0; fill: var(--cor-secundaria); }
+        .agencia a { color: var(--cor-acento); text-decoration: none; font-weight: 500; word-break: break-all; }
+        .agencia a:hover { text-decoration: underline; }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
+            background-color: var(--cor-principal);
+            color: rgba(255, 255, 255, 0.8);
+            border-top: 4px solid var(--cor-acento);
+        }
+        .footer-container { max-width: 800px; margin: 0 auto; }
+        footer h3 { font-size: 1.5rem; font-weight: 600; color: var(--cor-branco); margin: 0 0 10px 0; }
+        .footer-description { font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6; }
+        .footer-copyright { margin-top: 30px; font-size: 0.85rem; opacity: 0.7; }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .navbar { top: 0; }
+            #nav-regioes { top: 58px; gap: 8px; }
+            #nav-regioes a { padding: 8px 10px; font-size: 0.85rem; }
+            section h2 { font-size: 1.5rem; }
+            .agencia { padding: 20px; }
+            .agencia strong { font-size: 1.2rem; }
+            .agencia p { font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body id="topo">
+    <nav class="navbar">
+        <a href="index.html" class="home-link">← Voltar à Página Inicial</a>
+    </nav>
+    
+    <div class="main-container">
+        <h1>Agências de Emprego em Portugal</h1>
+
+        <nav id="nav-regioes">
+            <a href="#" data-target="lisboa">Lisboa</a>
+            <a href="#" data-target="porto">Porto</a>
+            <a href="#" data-target="acores">Açores</a>
+            <a href="#" data-target="aveiro">Aveiro</a>
+            <a href="#" data-target="beja">Beja</a>
+            <a href="#" data-target="braga">Braga</a>
+            <a href="#" data-target="braganca">Bragança</a>
+            <a href="#" data-target="castelo-branco">Castelo Branco</a>
+            <a href="#" data-target="coimbra">Coimbra</a>
+            <a href="#" data-target="evora">Évora</a>
+            <a href="#" data-target="faro">Faro</a>
+            <a href="#" data-target="guarda">Guarda</a>
+            <a href="#" data-target="leiria">Leiria</a>
+            <a href="#" data-target="madeira">Madeira</a>
+            <a href="#" data-target="portalegre">Portalegre</a>
+            <a href="#" data-target="santarem">Santarém</a>
+            <a href="#" data-target="setubal">Setúbal</a>
+            <a href="#" data-target="viana-do-castelo">Viana do Castelo</a>
+            <a href="#" data-target="vila-real">Vila Real</a>
+            <a href="#" data-target="viseu">Viseu</a>
+        </nav>
+
+        <svg width="0" height="0" style="display:none;">
+            <symbol id="icon-location" viewBox="0 0 20 20"><path d="M10 20S3 10.87 3 7a7 7 0 1114 0c0 3.87-7 13-7 13zm0-11a2 2 0 100-4 2 2 0 000 4z"></path></symbol>
+            <symbol id="icon-phone" viewBox="0 0 20 20"><path d="M17.25 12.83a1 1 0 00-1.41 0l-1.63 1.63a12.02 12.02 0 01-8.38-8.38l1.63-1.63a1 1 0 000-1.41L4.17 1.3a1 1 0 00-1.41 0L1.3 2.75a1 1 0 00-.3.71 14 14 0 0014 14 1 1 0 00.7-.3l1.46-1.46a1 1 0 000-1.41l-1.6-3.3z"></path></symbol>
+            <symbol id="icon-email" viewBox="0 0 20 20"><path d="M18 2a2 2 0 00-2-2H4a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V2zM4 4h12v1.5L10 10 4 5.5V4zm8 11H8v-2h4v2zm4-4H4V7l6 3.5L16 7v4z"></path></symbol>
+            <symbol id="icon-web" viewBox="0 0 20 20"><path d="M10 20a10 10 0 110-20 10 10 0 010 20zm-1-2.92V18a8 8 0 000-16v1.08A8 8 0 009 17.08zm2 0V18a8 8 0 000-16v1.08A8 8 0 0011 17.08zM2 10a8 8 0 0016 0h-1.08A8 8 0 002 10z"></path></symbol>
+            <symbol id="icon-fax" viewBox="0 0 20 20"><path d="M3 3h14a2 2 0 012 2v3h-2V5H3v10h4v2H3a2 2 0 01-2-2V5a2 2 0 012-2zm4 14h12V10H7v7zm2-5h8v2H9v-2zm0 3h8v2H9v-2zM8 4h4v2H8V4z"></path></symbol>
+        </svg>
+
+        <section id="lisboa">
+            <h2>Lisboa</h2>
+            <div class="agencia"><strong>Randstad Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg>Avenida da República, 26, 1069-228 Lisboa</p><p><svg><use xlink:href="#icon-phone"/></svg>800 244 244</p><p><svg><use xlink:href="#icon-email"/></svg>randstad@randstad.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.randstad.pt/" target="_blank">www.randstad.pt</a></p></div>
+            <div class="agencia"><strong>Manpower Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg>Centro Empresarial Torres de Lisboa, Rua Tomás da Fonseca, Torre G, Piso 14, 1600-209 Lisboa</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 300 032 624</p><p><svg><use xlink:href="#icon-email"/></svg>lisboa@manpower.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://manpower.manpowergroup.pt/" target="_blank">manpower.manpowergroup.pt</a></p></div>
+            <div class="agencia"><strong>Michael Page Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg>Avenida da Liberdade, nº180-A, 3º andar, 1250-146 Lisboa</p><p><svg><use xlink:href="#icon-phone"/></svg>210 419 110</p><p><svg><use xlink:href="#icon-email"/></svg>lisboa@michaelpage.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.michaelpage.pt/" target="_blank">www.michaelpage.pt</a></p></div>
+            <div class="agencia"><strong>Hays Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg>Avenida da República, Nº 90 1º, Fração 4, 1600-206 Lisboa</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 21 782 6560</p><p><svg><use xlink:href="#icon-email"/></svg>lisboa@hays.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.hays.pt/" target="_blank">www.hays.pt</a></p></div>
+            <div class="agencia"><strong>Robert Walters Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg>Avenida da Liberdade nº 190, 1250-147 Lisboa</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 210 403 239</p><p><svg><use xlink:href="#icon-email"/></svg>lisboa@robertwalters.com</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.robertwalters.pt/" target="_blank">www.robertwalters.pt</a></p></div>
+            <div class="agencia"><strong>IEFP – Instituto do Emprego e Formação Profissional</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua das Picoas, 14, 1069-003 Lisboa</p><p><svg><use xlink:href="#icon-phone"/></svg>21 580 20 00</p><p><svg><use xlink:href="#icon-email"/></svg>delegacao.lisboa@iefp.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.iefp.pt/" target="_blank">www.iefp.pt</a></p></div>
+            <div class="agencia"><strong>Triangulu</strong><p><svg><use xlink:href="#icon-location"/></svg>Avenida da República, n.º 32 – 5.º Esq., 1050-193 Lisboa</p><p><svg><use xlink:href="#icon-phone"/></svg>213 188 220</p><p><svg><use xlink:href="#icon-email"/></svg>triangulu@triangulu.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.triangulu.pt/" target="_blank">www.triangulu.pt</a></p></div>
+            <div class="agencia"><strong>Grupo T2</strong><p><svg><use xlink:href="#icon-location"/></svg>Avenida Conselheiro Fernando de Sousa, N.º 19 16º Piso, 1070-072 Lisboa</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 916 691 564</p><p><svg><use xlink:href="#icon-email"/></svg>recrutamento@grupot2.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.grupot2.pt/" target="_blank">www.grupot2.pt</a></p></div>
+            <div class="agencia"><strong>Eurofirms ETT</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua Sousa Lopes, Lote MNO Loja 6, 1600-207 Lisboa</p><p><svg><use xlink:href="#icon-phone"/></svg>219 014 264</p><p><svg><use xlink:href="#icon-email"/></svg>lisboa@eurofirms.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.eurofirms.pt/" target="_blank">www.eurofirms.pt</a></p></div>
+            <div class="agencia"><strong>Flexiplan – Recursos Humanos</strong><p><svg><use xlink:href="#icon-location"/></svg>Avenida General Roçadas, nº 21 A, 1170-156 Lisboa</p><p><svg><use xlink:href="#icon-phone"/></svg>218 163 210</p><p><svg><use xlink:href="#icon-email"/></svg>flexiplan@flexiplan.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.flexiplan.pt/" target="_blank">www.flexiplan.pt</a></p></div>
+        </section>
+
+        <section id="porto">
+            <h2>Porto</h2>
+            <div class="agencia"><strong>Serviço de Emprego do Porto – IEFP</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua Guedes de Azevedo, 212, 4049-008 Porto</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 220 989 280</p><p><svg><use xlink:href="#icon-fax"/></svg>+351 220 989 326</p><p><svg><use xlink:href="#icon-email"/></svg>se.porto@iefp.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://iefponline.iefp.pt/IEFP/centros-emprego-detalhe.do?idcentro=10" target="_blank">iefponline.iefp.pt</a></p></div>
+            <div class="agencia"><strong>Randstad Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua de Santa Catarina, 1236, 4000-447 Porto</p><p><svg><use xlink:href="#icon-phone"/></svg>800 244 244</p><p><svg><use xlink:href="#icon-email"/></svg>porto@randstad.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.randstad.pt/contactos/porto_15/" target="_blank">www.randstad.pt/contactos/porto_15</a></p></div>
+            <div class="agencia"><strong>ManpowerGroup</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua D. Manuel II, 290, Piso 12, 4050-344 Porto</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 300 032 626</p><p><svg><use xlink:href="#icon-email"/></svg>porto@manpower.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://manpowergroup.pt/" target="_blank">manpowergroup.pt</a></p></div>
+            <div class="agencia"><strong>Adecco Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua de Camões 175, 4000-144 Porto</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 22 507 2400</p><p><svg><use xlink:href="#icon-email"/></svg>porto@adecco.com</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.adecco.pt/" target="_blank">www.adecco.pt</a></p></div>
+            <div class="agencia"><strong>EVOLVE – Trabalho Temporário</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua Fonseca Cardoso, 211, 4000–234 Porto</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 223 391 900</p><p><svg><use xlink:href="#icon-email"/></svg>porto@evolverh.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.evolverh.pt/agencias" target="_blank">www.evolverh.pt/agencias</a></p></div>
+        </section>
+
+        <section id="acores">
+            <h2>Açores</h2>
+            <div class="agencia"><strong>Direção Regional de Qualificação Profissional e Emprego</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua Dr. José Bruno Tavares Carreiro, S/N, 9500-119 Ponta Delgada, Açores</p><p><svg><use xlink:href="#icon-phone"/></svg>296 308 000</p><p><svg><use xlink:href="#icon-email"/></svg>drqpe@azores.gov.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://emprego.azores.gov.pt/" target="_blank">emprego.azores.gov.pt</a></p></div>
+            <div class="agencia"><strong>Portos dos Açores, S.A.</strong><p><svg><use xlink:href="#icon-location"/></svg>Avenida Gago Coutinho e Sacadura Cabral, n.º 7, 9900-062 Horta, Açores</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 292 208 300</p><p><svg><use xlink:href="#icon-email"/></svg>geral@portosdosacores.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://portosdosacores.pt/recrutamento/" target="_blank">portosdosacores.pt/recrutamento</a></p></div>
+            <div class="agencia"><strong>Huork.com</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Plataforma online de empregos</em></p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://pt.indeed.com/cmp/Huork.com" target="_blank">pt.indeed.com/cmp/Huork.com</a></p></div>
+            <div class="agencia"><strong>Grupo Torel Boutiques</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Grupo hoteleiro, vagas listadas online</em></p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://pt.indeed.com/cmp/Grupo-Torel-Boutiques" target="_blank">pt.indeed.com/cmp/Grupo-Torel-Boutiques</a></p></div>
+            <div class="agencia"><strong>Azores Whale Watching TERRA AZUL™</strong><p><svg><use xlink:href="#icon-location"/></svg>Marina de Vila Franca do Campo, 9680-187 Vila Franca do Campo, Açores</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 296 582 333</p><p><svg><use xlink:href="#icon-email"/></svg>info@azoreswhalewatch.com</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.azoreswhalewatch.com/" target="_blank">www.azoreswhalewatch.com</a></p></div>
+        </section>
+
+        <section id="aveiro">
+            <h2>Aveiro</h2>
+            <div class="agencia"><strong>Randstad Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg>Cais da Fonte Nova, Edifício Fernando Távora, 3810-200 Aveiro</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 234 378 580</p><p><svg><use xlink:href="#icon-email"/></svg>aveiro@randstad.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.randstad.pt/contactos/aveiro_6/" target="_blank">www.randstad.pt/contactos/aveiro_6</a></p></div>
+            <div class="agencia"><strong>IEFP – Instituto do Emprego e Formação Profissional</strong><p><svg><use xlink:href="#icon-location"/></svg>Cais da Fonte Nova, 3810-200 Aveiro</p><p><svg><use xlink:href="#icon-phone"/></svg>234 093 380</p><p><svg><use xlink:href="#icon-email"/></svg>se.aveiro@iefp.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://iefponline.iefp.pt/IEFP/centros-emprego-detalhe.do?idcentro=39" target="_blank">iefponline.iefp.pt</a></p></div>
+            <div class="agencia"><strong>Multitempo by Job&Talent</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua Cristóvão Pinho Queimado 33, Loja C, 3800-012 Aveiro</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 229 476 760</p><p><svg><use xlink:href="#icon-email"/></svg>multitempo.maia@jobandtalent.com</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.multitempo.pt/contactos/" target="_blank">www.multitempo.pt/contactos</a></p></div>
+            <div class="agencia"><strong>Galileu Recursos Humanos</strong><p><svg><use xlink:href="#icon-location"/></svg>Av. Dr. Lourenço Peixinho, 63 – 4º, Salas D, E, F, 3800-165 Aveiro</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 234 094 648</p><p><svg><use xlink:href="#icon-email"/></svg>aveiro@grupogalileu.com.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.grupogalileu.com/" target="_blank">www.grupogalileu.com</a></p></div>
+            <div class="agencia"><strong>Motrinde</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua da Paz – Quintã do Loureiro, 3800-000 Aveiro</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 234 914 411</p><p><svg><use xlink:href="#icon-email"/></svg>motrinde@motrinde.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://motrinde.pt/recrutamento/" target="_blank">motrinde.pt/recrutamento</a></p></div>
+        </section>
+
+        <section id="beja">
+            <h2>Beja</h2>
+            <div class="agencia"><strong>Serviço de Emprego de Beja – IEFP</strong><p><svg><use xlink:href="#icon-location"/></svg>Praça da República, nº.1/4, 7800-427 Beja</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 284 093 861</p><p><svg><use xlink:href="#icon-fax"/></svg>+351 284 093 890</p><p><svg><use xlink:href="#icon-email"/></svg>se.beja@iefp.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://iefponline.iefp.pt/IEFP/centros-emprego-detalhe.do?idcentro=103" target="_blank">iefponline.iefp.pt</a></p></div>
+            <div class="agencia"><strong>Randstad Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Sem escritório físico em Beja. Contacto nacional abaixo.</em></p><p><svg><use xlink:href="#icon-phone"/></svg>800 244 244</p><p><svg><use xlink:href="#icon-email"/></svg>randstad@randstad.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.randstad.pt/empregos/beja/" target="_blank">www.randstad.pt/empregos/beja</a></p></div>
+            <div class="agencia"><strong>Adecco Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Sem escritório físico em Beja. Contacto nacional abaixo.</em></p><p><svg><use xlink:href="#icon-phone"/></svg>+351 21 358 8000</p><p><svg><use xlink:href="#icon-email"/></svg>info.portugal@adecco.com</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.adecco.pt/" target="_blank">www.adecco.pt</a></p></div>
+            <div class="agencia"><strong>Timing Recursos Humanos</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Sem escritório físico em Beja. Contacto nacional abaixo.</em></p><p><svg><use xlink:href="#icon-phone"/></svg>+351 289 090 390 (Sede Algarve)</p><p><svg><use xlink:href="#icon-email"/></svg>info@timing.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://empregos.timing.pt/empregos/beja?lang=pt" target="_blank">empregos.timing.pt/empregos/beja</a></p></div>
+            <div class="agencia"><strong>Huork.com</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Plataforma online de empregos</em></p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://pt.indeed.com/cmp/Huork.com" target="_blank">pt.indeed.com/cmp/Huork.com</a></p></div>
+        </section>
+
+        <section id="braga">
+            <h2>Braga</h2>
+            <div class="agencia"><strong>Serviço de Emprego de Braga – IEFP</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua Dr. Felicíssimo Campos, 127, 4700-224 Braga</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 253 469 750</p><p><svg><use xlink:href="#icon-fax"/></svg>+351 253 469 790</p><p><svg><use xlink:href="#icon-email"/></svg>se.braga@iefp.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://iefponline.iefp.pt/IEFP/centros-emprego-detalhe.do?idcentro=3" target="_blank">iefponline.iefp.pt</a></p></div>
+            <div class="agencia"><strong>Randstad Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua dos Chãos, 90, 4700-319 Braga</p><p><svg><use xlink:href="#icon-phone"/></svg>800 244 244</p><p><svg><use xlink:href="#icon-email"/></svg>braga@randstad.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.randstad.pt/contactos/braga_3/" target="_blank">www.randstad.pt/contactos/braga_3</a></p></div>
+            <div class="agencia"><strong>Leader Empresa de Trabalho Temporário, Lda.</strong><p><svg><use xlink:href="#icon-location"/></svg>Praça Manuel Fernandes da Silva, Nº 47 R/C, 4715-244 Braga</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 253 673 101</p><p><svg><use xlink:href="#icon-email"/></svg>geral@grupoleader.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.grupoleader.pt/" target="_blank">www.grupoleader.pt</a></p></div>
+            <div class="agencia"><strong>Proman Search – Trabalho Temporário Unipessoal Lda</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua Cónego Luciano Afonso dos Santos, Nº 17B, 4700-371 Braga</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 253 783 215</p><p><svg><use xlink:href="#icon-email"/></svg>geral@proman-search.com</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.proman-search.com/" target="_blank">www.proman-search.com</a></p></div>
+            <div class="agencia"><strong>EGOR – Empresa de Trabalho Temporário, Lda.</strong><p><svg><use xlink:href="#icon-location"/></svg>Avenida da Liberdade, 615, 4710-251 Braga</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 253 200 660</p><p><svg><use xlink:href="#icon-email"/></svg>braga@egor.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.egor.pt/" target="_blank">www.egor.pt</a></p></div>
+        </section>
+
+        <section id="braganca">
+            <h2>Bragança</h2>
+            <div class="agencia"><strong>Serviço de Emprego de Bragança – IEFP</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua Engenheiro Adelino Amaro da Costa, 5300-146 Bragança</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 273 310 040</p><p><svg><use xlink:href="#icon-email"/></svg>se.braganca@iefp.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://iefponline.iefp.pt/IEFP/centros-emprego-detalhe.do?idcentro=115" target="_blank">iefponline.iefp.pt</a></p></div>
+            <div class="agencia"><strong>Randstad Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Sem escritório físico em Bragança. Contacto nacional abaixo.</em></p><p><svg><use xlink:href="#icon-phone"/></svg>800 244 244</p><p><svg><use xlink:href="#icon-email"/></svg>randstad@randstad.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.randstad.pt/empregos/braganca/" target="_blank">www.randstad.pt/empregos/braganca</a></p></div>
+            <div class="agencia"><strong>Adecco Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Sem escritório físico em Bragança. Contacto nacional abaixo.</em></p><p><svg><use xlink:href="#icon-phone"/></svg>+351 21 358 8000</p><p><svg><use xlink:href="#icon-email"/></svg>info.portugal@adecco.com</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.adecco.pt/" target="_blank">www.adecco.pt</a></p></div>
+            <div class="agencia"><strong>Huork.com</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Plataforma online de empregos</em></p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://pt.indeed.com/cmp/Huork.com" target="_blank">pt.indeed.com/cmp/Huork.com</a></p></div>
+            <div class="agencia"><strong>Grupo Ibersol</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Grupo de restauração, vagas listadas online</em></p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.ibersol.pt/pt/carreiras" target="_blank">www.ibersol.pt/pt/carreiras</a></p></div>
+        </section>
+
+        <section id="castelo-branco">
+            <h2>Castelo Branco</h2>
+            <div class="agencia"><strong>Serviço de Emprego de Castelo Branco – IEFP</strong><p><svg><use xlink:href="#icon-location"/></svg>Av. Pedro Álvares Cabral, 6 – R/C, 6000-084 Castelo Branco</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 272 093 870</p><p><svg><use xlink:href="#icon-fax"/></svg>+351 272 093 892</p><p><svg><use xlink:href="#icon-email"/></svg>se.castelobranco@iefp.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://iefponline.iefp.pt/IEFP/centros-emprego-detalhe.do?idcentro=49" target="_blank">iefponline.iefp.pt</a></p></div>
+            <div class="agencia"><strong>Adecco Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg>Alameda da Liberdade, Bl. B, R/C Esq., 6000-062 Castelo Branco</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 272 328 013</p><p><svg><use xlink:href="#icon-email"/></svg>castelobranco@adecco.com</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.adecco.pt/" target="_blank">www.adecco.pt</a></p></div>
+            <div class="agencia"><strong>Randstad Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Sem escritório físico em Castelo Branco. Contacto nacional abaixo.</em></p><p><svg><use xlink:href="#icon-phone"/></svg>800 244 244</p><p><svg><use xlink:href="#icon-email"/></svg>randstad@randstad.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.randstad.pt/empregos/castelo-branco/" target="_blank">www.randstad.pt/empregos/castelo-branco</a></p></div>
+            <div class="agencia"><strong>Huork.com</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Plataforma online de empregos</em></p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://pt.indeed.com/cmp/Huork.com" target="_blank">pt.indeed.com/cmp/Huork.com</a></p></div>
+            <div class="agencia"><strong>Vertex – Agência de Emprego</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Comunidade de empregos no Facebook</em></p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.facebook.com/groups/187224278722285/" target="_blank">facebook.com/groups/...</a></p></div>
+        </section>
+
+        <section id="coimbra">
+            <h2>Coimbra</h2>
+            <div class="agencia"><strong>Serviço de Emprego de Coimbra – IEFP</strong><p><svg><use xlink:href="#icon-location"/></svg>Av. Fernão de Magalhães, 660-D, 3000-177 Coimbra</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 239 158 820</p><p><svg><use xlink:href="#icon-fax"/></svg>+351 239 158 859</p><p><svg><use xlink:href="#icon-email"/></svg>se.coimbra@iefp.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://iefponline.iefp.pt/IEFP/centros-emprego-detalhe.do?idcentro=41" target="_blank">iefponline.iefp.pt</a></p></div>
+            <div class="agencia"><strong>Centro de Emprego e Formação Profissional de Coimbra</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua António Sérgio, n.º 70 – Pedrulha, 3025-041 Coimbra</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 239 158 860</p><p><svg><use xlink:href="#icon-fax"/></svg>+351 239 158 915</p><p><svg><use xlink:href="#icon-email"/></svg>sfp.coimbra@iefp.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.iefp.pt/en/centroemprego?id=274407" target="_blank">www.iefp.pt/en/centroemprego</a></p></div>
+            <div class="agencia"><strong>Randstad Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua do Arnado, Lote 1, Loja F, 3000-055 Coimbra</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 239 095 020</p><p><svg><use xlink:href="#icon-email"/></svg>coimbra@randstad.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.randstad.pt/empregos/coimbra/coimbra/" target="_blank">www.randstad.pt/empregos/coimbra</a></p></div>
+            <div class="agencia"><strong>PROMAN Search</strong><p><svg><use xlink:href="#icon-location"/></svg>Urbanização Quinta da Várzea, lote 14 – Loja 11, 3040-092 Coimbra</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 912 635 366</p><p><svg><use xlink:href="#icon-email"/></svg>coimbra@proman-search.com</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://proman-search.com/contactos/" target="_blank">proman-search.com/contactos</a></p></div>
+            <div class="agencia"><strong>Samsic Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua Manuel de Almeida e Sousa, n°4, r/c esq, 3030-291 Coimbra</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 239 198 000</p><p><svg><use xlink:href="#icon-email"/></svg>geral@samsic.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.samsic.pt/agencias-e-filiais/coimbra/" target="_blank">www.samsic.pt/agencias-e-filiais/coimbra</a></p></div>
+        </section>
+
+        <section id="evora">
+            <h2>Évora</h2>
+            <div class="agencia"><strong>Serviço de Emprego de Évora – IEFP</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua do Centro de Formação Profissional nº 4, 7000-171 Évora</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 266 093 780</p><p><svg><use xlink:href="#icon-fax"/></svg>+351 266 093 868</p><p><svg><use xlink:href="#icon-email"/></svg>se.evora@iefp.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.iefp.pt/en/centroemprego?id=275403" target="_blank">www.iefp.pt/en/centroemprego</a></p></div>
+            <div class="agencia"><strong>Randstad Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Sem escritório físico em Évora. Contacto nacional abaixo.</em></p><p><svg><use xlink:href="#icon-phone"/></svg>800 244 244</p><p><svg><use xlink:href="#icon-email"/></svg>randstad@randstad.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.randstad.pt/empregos/evora/" target="_blank">www.randstad.pt/empregos/evora</a></p></div>
+            <div class="agencia"><strong>Adecco Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Sem escritório físico em Évora. Contacto nacional abaixo.</em></p><p><svg><use xlink:href="#icon-phone"/></svg>+351 21 358 8000</p><p><svg><use xlink:href="#icon-email"/></svg>info.portugal@adecco.com</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.adecco.pt/" target="_blank">www.adecco.pt</a></p></div>
+            <div class="agencia"><strong>Eurofirms Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Sem escritório físico em Évora. Contacto nacional abaixo.</em></p><p><svg><use xlink:href="#icon-phone"/></svg>+351 21 901 4264 (Central Lisboa)</p><p><svg><use xlink:href="#icon-email"/></svg>info.pt@eurofirms.com</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://jobs.eurofirms.com/pt/pt/trabalho/evora" target="_blank">jobs.eurofirms.com/pt/pt/trabalho/evora</a></p></div>
+            <div class="agencia"><strong>Huork.com</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Plataforma online de empregos</em></p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://pt.indeed.com/cmp/Huork.com" target="_blank">pt.indeed.com/cmp/Huork.com</a></p></div>
+        </section>
+
+        <section id="faro">
+            <h2>Faro</h2>
+            <div class="agencia"><strong>Serviço de Emprego de Faro – IEFP</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua Dr. Cândido Guerreiro, 41, 8000-318 Faro</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 289 152 650</p><p><svg><use xlink:href="#icon-fax"/></svg>+351 289 152 676</p><p><svg><use xlink:href="#icon-email"/></svg>se.faro@iefp.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://iefponline.iefp.pt/IEFP/centros-emprego-detalhe.do?idcentro=115" target="_blank">iefponline.iefp.pt</a></p></div>
+            <div class="agencia"><strong>Delegação Regional do Algarve – IEFP</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua Dr. Cândido Guerreiro, 45 – 1º Edifício Nascente, 8000-318 Faro</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 289 152 600</p><p><svg><use xlink:href="#icon-fax"/></svg>+351 289 890 101</p><p><svg><use xlink:href="#icon-email"/></svg>delegacao.algarve@iefp.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.iefp.pt/delegacao-algarve" target="_blank">www.iefp.pt/delegacao-algarve</a></p></div>
+            <div class="agencia"><strong>Timing Recursos Humanos – Delegação Faro (Penha)</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua Arthur Águedo de Miranda, Nº 3 Loja H, 8005-139 Faro</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 289 090 390</p><p><svg><use xlink:href="#icon-email"/></svg>info@timing.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.timing.pt/contactos/delegacao-faro-penha/" target="_blank">www.timing.pt/contactos/delegacao-faro-penha</a></p></div>
+            <div class="agencia"><strong>Timing Recursos Humanos – Delegação Faro (Baixa)</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua de Portugal Nº 14-A, 8000-281 Faro</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 289 150 150</p><p><svg><use xlink:href="#icon-email"/></svg>faro@timing.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.timing.pt/contactos/delegacao-faro-baixa/" target="_blank">www.timing.pt/contactos/delegacao-faro-baixa</a></p></div>
+            <div class="agencia"><strong>Multitempo by Job&Talent – Escritório Faro</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua Vasco da Gama 22, 4º Andar, 8000-442 Faro</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 21 124 9790</p><p><svg><use xlink:href="#icon-email"/></svg>pt.faro@jobandtalent.com</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.multitempo.pt/contactos/" target="_blank">www.multitempo.pt/contactos</a></p></div>
+        </section>
+
+        <section id="guarda">
+            <h2>Guarda</h2>
+            <div class="agencia"><strong>Serviço de Emprego da Guarda – IEFP</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua Soeiro Viegas, 6300-758 Guarda</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 271 220 820</p><p><svg><use xlink:href="#icon-email"/></svg>se.guarda@iefp.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.iefp.pt/centroemprego?id=275407" target="_blank">www.iefp.pt/centroemprego</a></p></div>
+            <div class="agencia"><strong>Randstad Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Sem escritório físico na Guarda. Contacto nacional abaixo.</em></p><p><svg><use xlink:href="#icon-phone"/></svg>800 244 244</p><p><svg><use xlink:href="#icon-email"/></svg>randstad@randstad.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.randstad.pt/empregos/guarda/" target="_blank">www.randstad.pt/empregos/guarda</a></p></div>
+            <div class="agencia"><strong>Adecco Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Sem escritório físico na Guarda. Contacto nacional abaixo.</em></p><p><svg><use xlink:href="#icon-phone"/></svg>+351 21 358 8000</p><p><svg><use xlink:href="#icon-email"/></svg>info.portugal@adecco.com</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.adecco.pt/" target="_blank">www.adecco.pt</a></p></div>
+            <div class="agencia"><strong>Huork.com</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Plataforma online de empregos</em></p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://pt.indeed.com/cmp/Huork.com" target="_blank">pt.indeed.com/cmp/Huork.com</a></p></div>
+            <div class="agencia"><strong>Grupo Ibersol</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Grupo de restauração, vagas listadas online</em></p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.ibersol.pt/pt/carreiras" target="_blank">www.ibersol.pt/pt/carreiras</a></p></div>
+        </section>
+
+        <section id="leiria">
+            <h2>Leiria</h2>
+            <div class="agencia"><strong>Serviço de Emprego de Leiria – IEFP</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua de S. Miguel, Lote 1, 2400-208 Leiria</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 244 239 700</p><p><svg><use xlink:href="#icon-fax"/></svg>+351 244 239 746</p><p><svg><use xlink:href="#icon-email"/></svg>se.leiria@iefp.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://iefponline.iefp.pt/IEFP/centros-emprego-detalhe.do?idcentro=44" target="_blank">iefponline.iefp.pt</a></p></div>
+            <div class="agencia"><strong>Randstad Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua de Leiria, nº 123, 2400-123 Leiria</p><p><svg><use xlink:href="#icon-phone"/></svg>800 244 244</p><p><svg><use xlink:href="#icon-email"/></svg>leiria@randstad.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.randstad.pt/contactos/leiria_11/" target="_blank">www.randstad.pt/contactos/leiria_11</a></p></div>
+            <div class="agencia"><strong>EVOLVE – Trabalho Temporário</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua Dr. José Gonçalves, 61, Piso 0 / Loja 3, 2410-121 Leiria</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 244 828 625</p><p><svg><use xlink:href="#icon-fax"/></svg>+351 244 833 435</p><p><svg><use xlink:href="#icon-email"/></svg>leiria@evolverh.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.evolverh.pt/agencias" target="_blank">www.evolverh.pt/agencias</a></p></div>
+            <div class="agencia"><strong>TRIANGULU</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua de São Francisco, Terraços do Marrachão, Bloco 1, 2º andar, E-11, 2400-229 Leiria</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 213 188 220 / +351 933 143 938 / +351 932 193 948</p><p><svg><use xlink:href="#icon-email"/></svg>triangulu@triangulu.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.triangulu.pt/contactos/" target="_blank">www.triangulu.pt/contactos</a></p></div>
+            <div class="agencia"><strong>ManpowerGroup</strong><p><svg><use xlink:href="#icon-location"/></svg>Avenida 22 de Maio, nº 32, Lote 11, R/C, 2415-396 Leiria</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 300 032 650</p><p><svg><use xlink:href="#icon-email"/></svg>leiria@manpower.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://manpower.manpowergroup.pt/contactos" target="_blank">manpower.manpowergroup.pt/contactos</a></p></div>
+        </section>
+
+        <section id="madeira">
+            <h2>Madeira</h2>
+            <div class="agencia"><strong>Instituto de Emprego da Madeira (IEM, IP-RAM)</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua da Boa Viagem, n.º 36, 9060-027 Funchal</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 291 145 740</p><p><svg><use xlink:href="#icon-email"/></svg>emprego@iem.madeira.gov.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.iem.madeira.gov.pt/" target="_blank">www.iem.madeira.gov.pt</a></p></div>
+            <div class="agencia"><strong>Randstad Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg>Edifício Século XXI, Rua das Hortas, N.º 1, 3º Andar, Sala AC, 9050-024 Funchal</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 291 214 000</p><p><svg><use xlink:href="#icon-email"/></svg>funchal@randstad.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.randstad.pt/contactos/funchal_58/" target="_blank">www.randstad.pt/contactos/funchal_58</a></p></div>
+            <div class="agencia"><strong>Timing Recursos Humanos</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua da Alfândega 78, 1º Andar, Sala 10, 9000-059 Funchal</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 910 112 020</p><p><svg><use xlink:href="#icon-email"/></svg>funchal@timing.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://empregos.timing.pt/empregos/ilha-da-madeira?lang=pt" target="_blank">empregos.timing.pt/empregos/ilha-da-madeira</a></p></div>
+            <div class="agencia"><strong>Huork.com</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Plataforma online de empregos</em></p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://pt.indeed.com/cmp/Huork.com" target="_blank">pt.indeed.com/cmp/Huork.com</a></p></div>
+            <div class="agencia"><strong>Instituto de Desenvolvimento Empresarial (IDE, IP-RAM)</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua da Figueira Preta, 10, 9050-019 Funchal</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 291 202 100</p><p><svg><use xlink:href="#icon-email"/></svg>ide@ide.madeira.gov.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.ide.madeira.gov.pt/" target="_blank">www.ide.madeira.gov.pt</a></p></div>
+        </section>
+
+        <section id="portalegre">
+            <h2>Portalegre</h2>
+            <div class="agencia"><strong>Serviço de Emprego de Portalegre – IEFP</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua 31 de Janeiro, 96, 7300-211 Portalegre</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 245 093 940</p><p><svg><use xlink:href="#icon-fax"/></svg>+351 245 093 959</p><p><svg><use xlink:href="#icon-email"/></svg>se.portalegre@iefp.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://iefponline.iefp.pt/IEFP/centros-emprego-detalhe.do?idcentro=100" target="_blank">iefponline.iefp.pt</a></p></div>
+            <div class="agencia"><strong>Randstad Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Sem escritório físico em Portalegre. Contacto nacional abaixo.</em></p><p><svg><use xlink:href="#icon-phone"/></svg>800 244 244</p><p><svg><use xlink:href="#icon-email"/></svg>randstad@randstad.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.randstad.pt/empregos/portalegre/" target="_blank">www.randstad.pt/empregos/portalegre</a></p></div>
+            <div class="agencia"><strong>Adecco Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Sem escritório físico em Portalegre. Contacto nacional abaixo.</em></p><p><svg><use xlink:href="#icon-phone"/></svg>+351 21 358 8000</p><p><svg><use xlink:href="#icon-email"/></svg>info.portugal@adecco.com</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.adecco.pt/" target="_blank">www.adecco.pt</a></p></div>
+            <div class="agencia"><strong>Eurofirms Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Sem escritório físico em Portalegre. Contacto nacional abaixo.</em></p><p><svg><use xlink:href="#icon-phone"/></svg>+351 21 901 4264 (Central Lisboa)</p><p><svg><use xlink:href="#icon-email"/></svg>info.pt@eurofirms.com</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://jobs.eurofirms.com/pt/pt/trabalho/portalegre" target="_blank">jobs.eurofirms.com/pt/pt/trabalho/portalegre</a></p></div>
+            <div class="agencia"><strong>Huork.com</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Plataforma online de empregos</em></p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://pt.indeed.com/cmp/Huork.com" target="_blank">pt.indeed.com/cmp/Huork.com</a></p></div>
+        </section>
+
+        <section id="santarem">
+            <h2>Santarém</h2>
+            <div class="agencia"><strong>Serviço de Emprego de Santarém – IEFP</strong><p><svg><use xlink:href="#icon-location"/></svg>Praceta Alves Redol, 22, 2000-042 Santarém</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 243 152 870</p><p><svg><use xlink:href="#icon-fax"/></svg>+351 243 152 903</p><p><svg><use xlink:href="#icon-email"/></svg>se.santarem@iefp.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://iefponline.iefp.pt/IEFP/centros-emprego-detalhe.do?idcentro=67" target="_blank">iefponline.iefp.pt</a></p></div>
+            <div class="agencia"><strong>Randstad Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg>Av. Dom Afonso Henriques 6, 2000-011 Santarém</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 243 329 820</p><p><svg><use xlink:href="#icon-email"/></svg>santarem@randstad.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.randstad.pt/contactos/santarem_57/" target="_blank">www.randstad.pt/contactos/santarem_57</a></p></div>
+            <div class="agencia"><strong>Adecco Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg>R. Pedro de Santarém 59, 2000-223 Santarém</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 243 306 050</p><p><svg><use xlink:href="#icon-email"/></svg>santarem@adecco.com</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.adecco.pt/" target="_blank">www.adecco.pt</a></p></div>
+            <div class="agencia"><strong>Eurofirms Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Sem escritório físico em Santarém. Contacto nacional abaixo.</em></p><p><svg><use xlink:href="#icon-phone"/></svg>+351 21 901 4264 (Central Lisboa)</p><p><svg><use xlink:href="#icon-email"/></svg>info.pt@eurofirms.com</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://jobs.eurofirms.com/pt/pt/trabalho/santarem" target="_blank">jobs.eurofirms.com/pt/pt/trabalho/santarem</a></p></div>
+            <div class="agencia"><strong>Huork.com</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Plataforma online de empregos</em></p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://pt.indeed.com/cmp/Huork.com" target="_blank">pt.indeed.com/cmp/Huork.com</a></p></div>
+        </section>
+
+        <section id="setubal">
+            <h2>Setúbal</h2>
+            <div class="agencia"><strong>Randstad Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg>Avenida 5 de Outubro, 140, 2900-309 Setúbal</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 265 521 600</p><p><svg><use xlink:href="#icon-email"/></svg>setubal@randstad.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.randstad.pt/" target="_blank">www.randstad.pt</a></p></div>
+            <div class="agencia"><strong>Eurofirms Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg>Avenida Alexandre Herculano, 23, 2900-205 Setúbal</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 265 522 000</p><p><svg><use xlink:href="#icon-email"/></svg>setubal@eurofirms.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.eurofirms.pt/" target="_blank">www.eurofirms.pt</a></p></div>
+            <div class="agencia"><strong>Timing Recursos Humanos</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua Camilo Castelo Branco, 12A, 2900-431 Setúbal</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 265 098 200</p><p><svg><use xlink:href="#icon-email"/></svg>setubal@timing.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.timing.pt/" target="_blank">www.timing.pt</a></p></div>
+            <div class="agencia"><strong>Synergie</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua Dr. António Manuel Gamito, 1A, 2900-595 Setúbal</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 265 543 200</p><p><svg><use xlink:href="#icon-email"/></svg>setubal@synergie.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.synergie.pt/" target="_blank">www.synergie.pt</a></p></div>
+            <div class="agencia"><strong>EVOLVE – Trabalho Temporário</strong><p><svg><use xlink:href="#icon-location"/></svg>Avenida Luísa Todi, 277, 1º, 2900-461 Setúbal</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 265 238 300</p><p><svg><use xlink:href="#icon-email"/></svg>setubal@evolverh.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.evolverh.pt/" target="_blank">www.evolverh.pt</a></p></div>
+        </section>
+
+        <section id="viana-do-castelo">
+            <h2>Viana do Castelo</h2>
+            <div class="agencia"><strong>Serviço de Emprego de Viana do Castelo – IEFP</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua Pedro Homem de Melo, 52, 4900-315 Viana do Castelo</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 258 026 700</p><p><svg><use xlink:href="#icon-fax"/></svg>+351 258 026 729</p><p><svg><use xlink:href="#icon-email"/></svg>se.vianacastelo@iefp.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://iefponline.iefp.pt/IEFP/centros-emprego-detalhe.do?idcentro=2" target="_blank">iefponline.iefp.pt</a></p></div>
+            <div class="agencia"><strong>Randstad Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg>Alameda João Alves Cerqueira nº 456, 4900-050 Viana do Castelo</p><p><svg><use xlink:href="#icon-phone"/></svg>800 244 244</p><p><svg><use xlink:href="#icon-email"/></svg>randstad@randstad.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.randstad.pt/contactos/viana-do-castelo_21/" target="_blank">www.randstad.pt/contactos/viana-do-castelo_21</a></p></div>
+            <div class="agencia"><strong>Adecco Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg>Largo da Estação, Edifício S. João, nº 1, 4900-431 Viana do Castelo</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 258 847 470</p><p><svg><use xlink:href="#icon-email"/></svg>vianadocastelo@adecco.com</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.adecco.pt/onde-estamos/" target="_blank">www.adecco.pt/onde-estamos</a></p></div>
+            <div class="agencia"><strong>Multitempo by Job&Talent</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Sem escritório físico em Viana. Contacto nacional abaixo.</em></p><p><svg><use xlink:href="#icon-phone"/></svg>+351 217 826 340</p><p><svg><use xlink:href="#icon-email"/></svg>multitempo@jobandtalent.com</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.multitempo.pt/contactos/" target="_blank">www.multitempo.pt/contactos</a></p></div>
+            <div class="agencia"><strong>EGOR</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Sem escritório físico em Viana. Contactos de Porto/Braga são os mais próximos.</em></p><p><svg><use xlink:href="#icon-phone"/></svg>+351 226 081 200 (Porto)</p><p><svg><use xlink:href="#icon-email"/></svg>porto@egor.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://egor.pt/" target="_blank">egor.pt</a></p></div>
+        </section>
+
+        <section id="vila-real">
+            <h2>Vila Real</h2>
+            <div class="agencia"><strong>Serviço de Emprego de Vila Real – IEFP</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua D. Pedro de Castro, 110 – Edifício da Segurança Social, 5000-669 Vila Real</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 259 096 700</p><p><svg><use xlink:href="#icon-fax"/></svg>+351 259 096 718</p><p><svg><use xlink:href="#icon-email"/></svg>se.vila_real@iefp.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://iefponline.iefp.pt/IEFP/centros-emprego-detalhe.do?idcentro=14" target="_blank">iefponline.iefp.pt</a></p></div>
+            <div class="agencia"><strong>Grupo Jorge Anjos – Filial Vila Real</strong><p><svg><use xlink:href="#icon-location"/></svg>Avenida Aureliano Barrigas, N.º 4 D Ed. 2, 5000-413 Vila Real</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 259 094 874</p><p><svg><use xlink:href="#icon-email"/></svg>pedidosvilareal@grupojorgeanjos.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.grupojorgeanjos.pt/" target="_blank">www.grupojorgeanjos.pt</a></p></div>
+            <div class="agencia"><strong>Randstad Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Sem escritório físico em Vila Real. Contacto nacional abaixo.</em></p><p><svg><use xlink:href="#icon-phone"/></svg>800 244 244</p><p><svg><use xlink:href="#icon-email"/></svg>randstad@randstad.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.randstad.pt/empregos/vila-real/" target="_blank">www.randstad.pt/empregos/vila-real</a></p></div>
+            <div class="agencia"><strong>Adecco Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua de Trás-os-Montes, nº 1, 5000-534 Vila Real</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 259 321 445</p><p><svg><use xlink:href="#icon-email"/></svg>vilareal@adecco.com</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.adecco.pt/" target="_blank">www.adecco.pt</a></p></div>
+            <div class="agencia"><strong>Huork.com</strong><p><svg><use xlink:href="#icon-location"/></svg><em>Plataforma online de empregos</em></p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://pt.indeed.com/cmp/Huork.com" target="_blank">pt.indeed.com/cmp/Huork.com</a></p></div>
+        </section>
+
+        <section id="viseu">
+            <h2>Viseu</h2>
+            <div class="agencia"><strong>Serviço de Emprego de Viseu – IEFP</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua D. José da Cruz Moreira Pinto, Lt. 6, 3510-077 Viseu</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 232 093 870</p><p><svg><use xlink:href="#icon-fax"/></svg>+351 232 093 915</p><p><svg><use xlink:href="#icon-email"/></svg>se.viseu@iefp.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://iefponline.iefp.pt/IEFP/centros-emprego-detalhe.do?idcentro=47" target="_blank">iefponline.iefp.pt</a></p></div>
+            <div class="agencia"><strong>Randstad Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua Cândido dos Reis, 10 – R/C Esq., 3510-056 Viseu</p><p><svg><use xlink:href="#icon-phone"/></svg>800 244 244</p><p><svg><use xlink:href="#icon-email"/></svg>viseu@randstad.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.randstad.pt/contactos/viseu_24/" target="_blank">www.randstad.pt/contactos/viseu_24</a></p></div>
+            <div class="agencia"><strong>Serviço de Formação Profissional de Viseu – IEFP</strong><p><svg><use xlink:href="#icon-location"/></svg>Parque Industrial de Coimbrões, 3500-618 Viseu</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 232 093 800</p><p><svg><use xlink:href="#icon-fax"/></svg>+351 232 093 864</p><p><svg><use xlink:href="#icon-email"/></svg>sfp.viseu@iefp.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://iefponline.iefp.pt/IEFP/centros-emprego-detalhe.do?idcentro=58" target="_blank">iefponline.iefp.pt</a></p></div>
+            <div class="agencia"><strong>Adecco Portugal</strong><p><svg><use xlink:href="#icon-location"/></svg>Av. Dr. António José de Almeida 162, 3510-043 Viseu</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 232 488 640</p><p><svg><use xlink:href="#icon-email"/></svg>viseu@adecco.com</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://www.adecco.pt/tag/viseu/" target="_blank">www.adecco.pt/tag/viseu</a></p></div>
+            <div class="agencia"><strong>Nortempo</strong><p><svg><use xlink:href="#icon-location"/></svg>Rua da Paz, 102, 3510-103 Viseu</p><p><svg><use xlink:href="#icon-phone"/></svg>+351 232 449 055</p><p><svg><use xlink:href="#icon-email"/></svg>viseu@nortempo.pt</p><p><svg><use xlink:href="#icon-web"/></svg><a href="https://nortempo.pt/contato/" target="_blank">nortempo.pt/contato</a></p></div>
+        </section>
+        
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <h3>Portal de Apoio ao Imigrante</h3>
+            <p class="footer-description">Este guia foi compilado para ajudar na sua jornada em Portugal. Lembre-se que as leis e procedimentos podem mudar, por isso, confirme sempre a informação nos sites oficiais.</p>
+            <p class="footer-copyright">© 2025 Fernando Chagas. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('#nav-regioes a');
+            const sections = document.querySelectorAll('.main-container section');
+
+            function showSection(targetId) {
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+                const targetSection = document.getElementById(targetId);
+                const activeLink = document.querySelector(`#nav-regioes [data-target="${targetId}"]`);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                }
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+            showSection('lisboa'); // Mostra Lisboa por defeito
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('data-target');
+                    showSection(targetId);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

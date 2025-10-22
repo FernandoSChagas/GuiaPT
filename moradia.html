@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encontrar Moradia em Portugal - Guia do Imigrante</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cor-principal: #2d3748;
+            --cor-secundaria: #4a5568;
+            --cor-acento: #38b2ac;
+            --cor-fundo: #f7fafc;
+            --cor-branco: #ffffff;
+            --sombra-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-secundaria);
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        .navbar {
+            background-color: var(--cor-branco);
+            padding: 15px 20px;
+            box-shadow: var(--sombra-card);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a.home-link {
+            color: var(--cor-principal);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .main-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: var(--cor-principal);
+            margin-bottom: 20px;
+            border-bottom: 3px solid var(--cor-acento);
+            padding-bottom: 10px;
+        }
+
+        .content-card {
+            background-color: var(--cor-branco);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--sombra-card);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--cor-principal);
+            margin-top: 0;
+        }
+        
+        p, li { font-size: 1rem; }
+        
+        ul { padding-left: 20px; }
+
+        strong { color: var(--cor-principal); }
+
+        a {
+            color: var(--cor-acento);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        a:hover { text-decoration: underline; }
+
+        .alert-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .alert-list li {
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .alert-list li::before {
+            content: '⚠️';
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .content-card { padding: 20px; }
+            h2 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="home-link">← Voltar à Página Inicial</a>
+    </nav>
+    
+    <div class="main-container">
+        <h1>Encontrar Moradia</h1>
+        
+        <div class="content-card">
+            <h2>Onde Procurar Imóveis para Arrendar</h2>
+            <p>A grande maioria da procura por imóveis em Portugal é feita online. Estes são os portais mais utilizados:</p>
+            <ul>
+                <li><a href="https://www.idealista.pt/" target="_blank"><strong>Idealista.pt</strong></a>: Provavelmente o maior e mais popular site, com muitos filtros e uma interface fácil de usar.</li>
+                <li><a href="https://www.imovirtual.com/" target="_blank"><strong>Imovirtual.com</strong></a>: Outro gigante do mercado, com uma vasta seleção de imóveis de agências e particulares.</li>
+                <li><a href="https://www.custojusto.pt/portugal/imobiliaria" target="_blank"><strong>CustoJusto.pt</strong></a>: Focado em anúncios de particulares, pode encontrar aqui negócios mais diretos.</li>
+                <li><a href="https://www.olx.pt/imoveis/" target="_blank"><strong>OLX Imóveis</strong></a>: Semelhante ao CustoJusto, com muitos anúncios de particulares, mas exige atenção redobrada a possíveis fraudes.</li>
+                <li><strong>Grupos de Facebook:</strong> Procure por "Arrendamento [Nome da Cidade]" ou "Brasileiros em [Nome da Cidade]". São ótimos para encontrar quartos ou arrendamentos diretos, mas tenha muito cuidado.</li>
+            </ul>
+        </div>
+
+        <div class="content-card">
+            <h2>Documentos Comuns para o Arrendamento</h2>
+            <p>Os senhorios (proprietários) precisam de garantias de que você pode pagar a renda. Prepare-se para apresentar os seguintes documentos:</p>
+            <ul>
+                <li><strong>Número de Identificação Fiscal (NIF)</strong>.</li>
+                <li><strong>Documento de Identificação</strong> (Passaporte, Título de Residência).</li>
+                <li><strong>Contrato de Trabalho</strong> (ou uma declaração da sua empresa).</li>
+                <li><strong>Últimos 3 Recibos de Vencimento</strong>.</li>
+                <li><strong>Última Declaração de IRS</strong> (se já tiver feito em Portugal).</li>
+                <li><strong>Fiador:</strong> Esta é a maior dificuldade para imigrantes. Um fiador é uma pessoa (geralmente um cidadão português com rendimentos) que se responsabiliza por pagar a sua renda caso você falhe.</li>
+            </ul>
+            <p><strong>Não tenho fiador, e agora?</strong> Muitos imigrantes oferecem pagar mais meses de renda adiantados (entre 3 a 6, ou até mais) como garantia extra para o senhorio.</p>
+        </div>
+
+        <div class="content-card">
+            <h2>Glossário Essencial do Arrendamento</h2>
+            <p>O "imobilês" pode ser confuso. Aqui estão os termos mais importantes:</p>
+            <ul>
+                <li><strong>Caução:</strong> Um valor (geralmente igual a 1 ou 2 rendas) que serve de garantia para o senhorio contra possíveis danos no imóvel. É devolvido no final do contrato se tudo estiver em ordem.</li>
+                <li><strong>Rendas de Adiantamento:</strong> Rendas que você paga adiantado ao senhorio como garantia.</li>
+                <li><strong>Senhorio:</strong> O proprietário do imóvel.</li>
+                <li><strong>Inquilino (ou Arrendatário):</strong> A pessoa que arrenda o imóvel.</li>
+                <li><strong>T0, T1, T2:</strong> Tipologia do imóvel. T0 é um estúdio (sem quarto separado), T1 tem um quarto, T2 tem dois quartos, e assim por diante.</li>
+                <li><strong>Equipado:</strong> Geralmente significa que a cozinha tem os eletrodomésticos básicos (fogão, frigorífico, exaustor).</li>
+                <li><strong>Mobilado:</strong> Significa que o imóvel já vem com móveis (cama, sofá, mesa, etc.).</li>
+            </ul>
+        </div>
+        
+        <div class="content-card">
+            <h2>Cuidado com Fraudes e Burlas!</h2>
+            <p>Infelizmente, existem muitas tentativas de fraude no mercado de arrendamento. Fique atento a estes sinais:</p>
+            <ul class="alert-list">
+                <li><strong>NUNCA pague nada antes de visitar o imóvel pessoalmente e assinar o contrato.</strong> Desconfie de quem pede "sinais" ou "reservas" antecipadas.</li>
+                <li><strong>Desconfie de preços muito abaixo do mercado.</strong> Se parece bom demais para ser verdade, provavelmente é.</li>
+                <li><strong>Verifique a identidade do senhorio.</strong> Peça para ver a Caderneta Predial ou um documento que comprove que ele é o proprietário.</li>
+                <li><strong>Exija sempre um contrato de arrendamento escrito e registado nas Finanças.</strong> Um contrato verbal não lhe oferece segurança.</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        </footer>
+</body>
+</html>

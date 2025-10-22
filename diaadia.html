@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia a Dia e Integração - Guia do Imigrante</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cor-principal: #2d3748;
+            --cor-secundaria: #4a5568;
+            --cor-acento: #38b2ac;
+            --cor-fundo: #f7fafc;
+            --cor-branco: #ffffff;
+            --sombra-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-secundaria);
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        .navbar {
+            background-color: var(--cor-branco);
+            padding: 15px 20px;
+            box-shadow: var(--sombra-card);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a.home-link {
+            color: var(--cor-principal);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .main-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: var(--cor-principal);
+            margin-bottom: 20px;
+            border-bottom: 3px solid var(--cor-acento);
+            padding-bottom: 10px;
+        }
+
+        .content-card {
+            background-color: var(--cor-branco);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--sombra-card);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--cor-principal);
+            margin-top: 0;
+        }
+        
+        p, li { font-size: 1rem; }
+        
+        ul { padding-left: 20px; }
+
+        strong { color: var(--cor-principal); }
+
+        a {
+            color: var(--cor-acento);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        a:hover { text-decoration: underline; }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .content-card { padding: 20px; }
+            h2 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="home-link">← Voltar à Página Inicial</a>
+    </nav>
+    
+    <div class="main-container">
+        <h1>Dia a Dia e Integração</h1>
+        
+        <div class="content-card">
+            <h2>Saúde em Portugal: O SNS</h2>
+            <p>O <strong>Serviço Nacional de Saúde (SNS)</strong> é o sistema de saúde público de Portugal. Como residente legal, você tem direito a acedê-lo.</p>
+            <h3>Como se inscrever no Centro de Saúde</h3>
+            <p>Para ter acesso a consultas e a um médico de família, deve inscrever-se no Centro de Saúde (ou Unidade de Saúde Familiar - USF) da sua área de residência.</p>
+            <ul>
+                <li><strong>O que precisa:</strong> Documento de autorização de residência (ou comprovativo de Manifestação de Interesse), NIF e Atestado de Morada da sua Junta de Freguesia.</li>
+                <li>Com a inscrição, é-lhe atribuído um <strong>Número de Utente</strong>. Este número é a sua identificação no sistema de saúde.</li>
+                <li>As consultas têm um custo reduzido chamado <strong>"taxa moderadora"</strong> (algumas pessoas podem estar isentas).</li>
+            </ul>
+            <h3>Urgências vs. SNS 24</h3>
+            <p>É importante saber a diferença:</p>
+            <ul>
+                <li><strong>Urgências Hospitalares:</strong> Apenas para situações graves, emergências ou acidentes. Ir à urgência por motivos não urgentes pode resultar em longas esperas.</li>
+                <li><strong>Linha SNS 24 (Telefone: 808 24 24 24):</strong> Antes de ir a uma urgência, ligue para esta linha. Enfermeiros especializados irão avaliar a sua situação, dar conselhos ou encaminhá-lo para o local mais apropriado, evitando idas desnecessárias ao hospital.</li>
+            </ul>
+        </div>
+
+        <div class="content-card">
+            <h2>Transportes Públicos</h2>
+            <p>Os transportes públicos são a forma mais económica de se deslocar nas grandes cidades.</p>
+            
+            <h3>Lisboa e Porto</h3>
+            <ul>
+                <li><strong>Passes Mensais:</strong> A melhor opção é fazer um passe mensal. Em Lisboa, chama-se <strong>"Navegante"</strong> e no Porto, <strong>"Andante Metropolitano"</strong>. Permitem viagens ilimitadas em metro, autocarros (carris/STCP) e comboios urbanos dentro da área metropolitana, por um preço fixo mensal.</li>
+                <li><strong>Como fazer o passe:</strong> Procure um "Espaço Cliente" do metro ou dos operadores de transporte com os seus documentos de identificação e uma fotografia tipo passe.</li>
+            </ul>
+            
+            <h3>Viagens Nacionais</h3>
+            <ul>
+                <li><strong>Comboios (CP - Comboios de Portugal):</strong> A principal rede ferroviária do país. Conecta as principais cidades com serviços Alfa Pendular (mais rápido), Intercidades e Regionais. Compre bilhetes com antecedência no site <a href="https://www.cp.pt/" target="_blank">www.cp.pt</a> para obter descontos.</li>
+                <li><strong>Autocarros (Rede Expressos):</strong> Uma vasta rede de autocarros que chega a quase todas as cidades e vilas do país.</li>
+            </ul>
+        </div>
+
+        <div class="content-card">
+            <h2>Educação para Crianças</h2>
+            <p>O sistema de ensino público em Portugal é gratuito e acessível a todas as crianças residentes, independentemente da situação legal dos pais.</p>
+            <h3>Como Matricular os Seus Filhos</h3>
+            <ul>
+                <li>Dirija-se ao <strong>Agrupamento de Escolas</strong> da sua área de residência.</li>
+                <li><strong>Documentos necessários (geralmente):</strong> Documento de identificação da criança e dos pais, NIF da criança e dos pais, boletim de vacinas e comprovativo de morada.</li>
+                <li><strong>Abono de Família:</strong> Após ter o seu NISS (Segurança Social), verifique se tem direito ao abono de família, um apoio financeiro mensal para ajudar nas despesas com os filhos. O pedido é feito na <a href="https://www.seg-social.pt/" target="_blank">Segurança Social Direta</a>.</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        </footer>
+</body>
+</html>
