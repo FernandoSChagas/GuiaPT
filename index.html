@@ -14,8 +14,7 @@
             --cor-acento: #38b2ac;
             --cor-fundo: #f7fafc;
             --cor-branco: #ffffff;
-            --sombra-card: 0 4px
- 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --sombra-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
 
         html { scroll-behavior: smooth; }
@@ -36,32 +35,11 @@
             padding: 80px 20px;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 3rem;
-            font-weight: 700;
-        }
+        header h1 { margin: 0; font-size: 3rem; font-weight: 700; }
+        header p { font-size: 1.2rem; opacity: 0.9; margin-top: 10px; max-width: 600px; margin-left: auto; margin-right: auto; }
 
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-top: 10px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .main-container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        .section-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
+        .main-container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        .section-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
 
         .section-card {
             background-color: var(--cor-branco);
@@ -82,24 +60,9 @@
             border-bottom-color: var(--cor-acento);
         }
         
-        .section-card svg {
-            width: 48px;
-            height: 48px;
-            fill: var(--cor-acento);
-            margin-bottom: 15px;
-        }
-
-        .section-card h2 {
-            font-size: 1.5rem;
-            color: var(--cor-principal);
-            margin: 0 0 10px 0;
-        }
-
-        .section-card p {
-            font-size: 0.95rem;
-            margin: 0;
-            flex-grow: 1;
-        }
+        .section-card svg { width: 48px; height: 48px; fill: var(--cor-acento); margin-bottom: 15px; }
+        .section-card h2 { font-size: 1.5rem; color: var(--cor-principal); margin: 0 0 10px 0; }
+        .section-card p { font-size: 0.95rem; margin: 0; flex-grow: 1; }
 
         footer {
             text-align: center;
@@ -120,8 +83,8 @@
             header h1 { font-size: 2.5rem; }
             .main-container { margin-top: 25px; padding: 0 15px; }
         }
-
-        /* Estilos para o Botão Flutuante do WhatsApp */
+        
+        /* Estilos para o Botão Flutuante do WhatsApp (VERSÃO SÓ TEXTO) */
         .whatsapp-button {
             position: fixed;
             bottom: 25px;
@@ -130,9 +93,6 @@
             color: white;
             padding: 12px 20px;
             border-radius: 30px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
             z-index: 1001;
             text-decoration: none;
@@ -146,19 +106,11 @@
             box-shadow: 0 6px 15px rgba(0,0,0,0.3);
         }
 
-        .whatsapp-button svg {
-            width: 28px;
-            height: 28px;
-            fill: white;
-        }
-
-        /* Oculta o texto em ecrãs pequenos, mostrando só o ícone */
+        /* Ajustes para mobile */
         @media (max-width: 768px) {
             .whatsapp-button {
-                padding: 15px;
-            }
-            .whatsapp-button span {
-                display: none;
+                padding: 10px 15px;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -166,9 +118,8 @@
 <body id="topo">
 
     <a href="https://chat.whatsapp.com/Lxm8UeCfJLJCSMA10X8Umq" class="whatsapp-button" target="_blank">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.75 13.96c.25.42.44.83.63 1.25.18.4.35.79.49 1.17-.11.45-.75.83-1.48.72-.43-.07-.93-.2-1.5-.39-.33-.11-.67-.24-1.02-.39-.42-.18-.84-.39-1.25-.63-.41-.23-.81-.49-1.18-.77-.37-.28-.71-.59-1.02-.92s-.58-.69-.81-1.07c-.23-.38-.43-.79-.59-1.22-.16-.43-.29-.87-.39-1.32-.1-.45.09-.9.45-1.18.29-.22.62-.31.98-.26.39.06.77.26 1.12.59.32.3.61.68.86 1.12.24.42.46.85.63 1.29.17.43.31.87.42 1.32.1.41.15.82.15 1.22s-.05.79-.15 1.16zm-4.75 7.04c-6.63 0-12-5.37-12-12s5.37-12 12-12 12 5.37 12 12-5.37 12-12 12zm0-2.18c5.41 0 9.82-4.41 9.82-9.82s-4.41-9.82-9.82-9.82-9.82 4.41-9.82 9.82c0 1.75.46 3.42 1.29 4.88l-1.4 4.92 5.03-1.38c1.4.78 3.01 1.22 4.68 1.22z" fill="white"/></svg>
-    <span>Junte-se à Comunidade!</span>
-</a>
+        Junte-se à Comunidade!
+    </a>
 
     <svg width="0" height="0" style="display:none;">
         <symbol id="icon-legal" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm-1 15v-2h2v2H11zm2-4h-2V7h2v6z"/></symbol>
@@ -236,4 +187,3 @@
 
 </body>
 </html>
-
