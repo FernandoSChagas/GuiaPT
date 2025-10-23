@@ -28,18 +28,40 @@
         }
 
         header {
-            background: linear-gradient(rgba(45, 55, 72, 0.8), rgba(45, 55, 72, 0.8)), url('https://images.unsplash.com/photo-1579532452378-958133595188?q=80&w=2070&auto=format&fit=crop') no-repeat center center;
+            /* ALTERAÇÃO FEITA AQUI: Adicionamos a imagem e a camada escura */
+            background: linear-gradient(rgba(45, 55, 72, 0.7), rgba(45, 55, 72, 0.7)), url('img/header-portugal.webp') no-repeat center center;
             background-size: cover;
             color: var(--cor-branco);
             text-align: center;
             padding: 80px 20px;
         }
 
-        header h1 { margin: 0; font-size: 3rem; font-weight: 700; }
-        header p { font-size: 1.2rem; opacity: 0.9; margin-top: 10px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            font-weight: 700;
+        }
 
-        .main-container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
-        .section-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 10px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .main-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
 
         .section-card {
             background-color: var(--cor-branco);
@@ -60,9 +82,24 @@
             border-bottom-color: var(--cor-acento);
         }
         
-        .section-card svg { width: 48px; height: 48px; fill: var(--cor-acento); margin-bottom: 15px; }
-        .section-card h2 { font-size: 1.5rem; color: var(--cor-principal); margin: 0 0 10px 0; }
-        .section-card p { font-size: 0.95rem; margin: 0; flex-grow: 1; }
+        .section-card svg {
+            width: 48px;
+            height: 48px;
+            fill: var(--cor-acento);
+            margin-bottom: 15px;
+        }
+
+        .section-card h2 {
+            font-size: 1.5rem;
+            color: var(--cor-principal);
+            margin: 0 0 10px 0;
+        }
+
+        .section-card p {
+            font-size: 0.95rem;
+            margin: 0;
+            flex-grow: 1;
+        }
 
         footer {
             text-align: center;
@@ -83,7 +120,7 @@
             header h1 { font-size: 2.5rem; }
             .main-container { margin-top: 25px; padding: 0 15px; }
         }
-        
+
         /* Estilos para o Botão Flutuante do WhatsApp (VERSÃO SÓ TEXTO) */
         .whatsapp-button {
             position: fixed;
