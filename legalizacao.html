@@ -15,6 +15,7 @@
             --cor-fundo: #f7fafc;
             --cor-branco: #ffffff;
             --sombra-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --cor-alerta: #c53030;
         }
         
         html { scroll-behavior: smooth; }
@@ -68,6 +69,10 @@
             box-shadow: var(--sombra-card);
         }
 
+        .alert-card {
+            border-left: 5px solid var(--cor-alerta);
+        }
+
         h2 {
             font-size: 1.8rem;
             color: var(--cor-principal);
@@ -88,31 +93,9 @@
         
         a:hover { text-decoration: underline; }
 
-        .checklist {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .checklist li {
-            position: relative;
-            padding-left: 30px;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-
-        .checklist li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: var(--cor-acento);
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        footer {
-            /* ... o seu rodapé ... */
-        }
+        .checklist { list-style-type: none; padding: 0; }
+        .checklist li { position: relative; padding-left: 30px; margin-bottom: 15px; font-size: 1.1rem; }
+        .checklist li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--cor-acento); font-weight: bold; font-size: 1.2rem; }
         
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
@@ -155,28 +138,41 @@
             </ol>
         </div>
 
-        <div class="content-card">
-            <h2>Vistos e Residência (AIMA)</h2>
-            <p>A <strong>AIMA (Agência para a Integração, Migrações e Asilo)</strong> é a entidade que substituiu o SEF. É responsável pela sua documentação de residência em Portugal.</p>
+        <div class="content-card alert-card">
+            <h2>Vistos e Residência: Fim da Manifestação de Interesse</h2>
+            <p><strong>ATENÇÃO:</strong> A 3 de junho de 2024, o Governo português alterou significativamente as regras de entrada para novos imigrantes. O procedimento conhecido como <strong>"Manifestação de Interesse" foi extinto</strong> para novas submissões.</p>
             
-            <h3>Manifestação de Interesse</h3>
-            <p>Se você entrou em Portugal como turista e conseguiu um contrato de trabalho, pode iniciar um processo chamado "Manifestação de Interesse" para obter a sua autorização de residência.</p>
-            <ul class="checklist">
-                <li>O processo é feito online através do <a href="https://sapa.aima.gov.pt/" target="_blank">Portal SAPA</a>.</li>
-                <li>É fundamental ter um contrato de trabalho e inscrição na Segurança Social.</li>
-                <li>Este processo pode ser demorado. É importante submeter todos os documentos corretamente.</li>
+            <h3>Como Funciona Agora?</h3>
+            <p>A regra geral é que, para vir trabalhar em Portugal, o cidadão estrangeiro (de fora da União Europeia) deve obter um <strong>visto de trabalho ou de procura de trabalho no consulado português do seu país de origem, ANTES de viajar.</strong></p>
+            <ul>
+                <li>Isto significa que não é mais possível entrar como turista com a intenção de procurar trabalho e depois regularizar a situação por essa via.</li>
+                <li>A obtenção de um visto prévio no país de origem passou a ser a principal forma de entrada para fins de trabalho.</li>
             </ul>
 
-            <h3>Agendamentos e Informações</h3>
-            <p>Os agendamentos para tratar de assuntos na AIMA são feitos online ou por telefone. A procura é muito alta, por isso é preciso ter paciência.</p>
+            <h3>E quem já fez a Manifestação de Interesse?</h3>
+            <p>Se você submeteu o seu processo de Manifestação de Interesse no Portal SAPA **antes de 4 de junho de 2024**, o seu processo será analisado normalmente, de acordo com as regras antigas. A mudança não afeta os processos que já estavam em andamento.</p>
+            <ul class="checklist">
+                <li>O seu processo continua válido e em fila para análise na AIMA.</li>
+                <li>Acompanhe o estado do seu processo no <a href="https://sapa.aima.gov.pt/" target="_blank">Portal SAPA</a>.</li>
+            </ul>
+        </div>
+
+        <div class="content-card">
+            <h2>AIMA: A sua Referência para a Residência</h2>
+            <p>A <strong>AIMA (Agência para a Integração, Migrações e Asilo)</strong> é a entidade que substituiu o SEF e que é responsável pela sua documentação de residência em Portugal.</p>
             <ul>
-                <li><strong>Portal Oficial da AIMA:</strong> <a href="https://aima.gov.pt/" target="_blank">aima.gov.pt</a></li>
-                <li><strong>Para agendamentos e informações, use os canais oficiais.</strong> Tenha cuidado com ofertas de "facilitação" de agendamentos, pois muitas são fraudes.</li>
+                <li><strong>Portal Oficial da AIMA:</strong> Para informações oficiais, agendamentos e acompanhamento de processos, consulte sempre o site <a href="https://aima.gov.pt/" target="_blank">aima.gov.pt</a>.</li>
+                <li><strong>Tenha cuidado com intermediários:</strong> Utilize sempre os canais oficiais para agendamentos e informações. A procura é alta e exige paciência.</li>
             </ul>
         </div>
     </div>
 
     <footer>
-        </footer>
+        <div class="footer-container">
+            <h3>Portal de Apoio ao Imigrante</h3>
+            <p class="footer-description">Este guia foi compilado para ajudar na sua jornada em Portugal. Lembre-se que as leis e procedimentos podem mudar, por isso, confirme sempre a informação nos sites oficiais.</p>
+            <p class="footer-copyright">© 2025 Fernando Chagas. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 </body>
 </html>
