@@ -102,9 +102,54 @@
             .content-card { padding: 20px; }
             h2 { font-size: 1.5rem; }
         }
+
+        /* Estilos para o Botão Flutuante do WhatsApp */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25D366;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 1001;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+
+        .whatsapp-button svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-button {
+                padding: 15px;
+            }
+            .whatsapp-button span {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
+    <a href="https://chat.whatsapp.com/Lxm8UeCfJLJCSMA10X8Umq" class="whatsapp-button" target="_blank">
+        <svg viewBox="0 0 800 800"><path d="M519 454c-2.6-1.3-15.3-7.5-17.7-8.4-2.4-.8-4.1-.4-5.9 1.3-1.8 1.8-6.7 8.4-8.2 10.1-1.5 1.8-3 1.9-5.5.6-2.5-1.3-10.7-3.9-20.4-12.6-7.6-6.8-12.8-15.3-14.3-17.9-1.5-2.6-.2-4 1.2-5.3 1.2-1.2 2.6-3 3.9-4.5 1.3-1.5 1.8-2.6 2.6-4.4 1-2.2.4-4.1-.2-5.3-.6-1.3-5.9-14.2-8-19.5-2.2-5.3-4.4-4.5-5.9-4.5-1.5 0-3.3-.1-5-.1s-4.1.6-6.4 3.1-8.7 8.4-8.7 20.4c0 12 8.9 23.7 10.1 25.4 1.3 1.8 17.7 27 42.9 37.8 6.1 2.6 10.9 4.2 14.8 5.4 8.2 2.5 15.6 2.2 21.4 1.3 6.4-.9 19.3-7.9 22-15.6 2.7-7.7 2.7-14.2 1.9-15.6-.8-1.5-3-2.4-5.5-3.8zm-113.8-249.2c-66.5 0-120.4 53.9-120.4 120.4 0 21.3 5.6 41.7 15.8 59.4l-16.7 61.2 62.7-16.4c17.1 9.6 36.4 14.8 56.6 14.8 66.5 0 120.4-53.9 120.4-120.4s-53.9-120.4-120.4-120.4zM401 593.4c-22.1 0-43.4-5.9-62-17.2l-65.7 17.2 17.6-64.2c-12.1-18.8-18.5-40.4-18.5-63.2 0-77.9 63.5-141.4 141.4-141.4S542.4 288 542.4 366c.1 77.8-63.4 141.4-141.4 141.4z"/></svg>
+        <span>Junte-se ao Grupo!</span>
+    </a>
+
     <nav class="navbar">
         <a href="index.html" class="home-link">← Voltar à Página Inicial</a>
     </nav>
