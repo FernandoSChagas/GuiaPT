@@ -144,7 +144,7 @@
             .agencia p { font-size: 0.9rem; }
         }
 
-        /* Estilos para o Botão Flutuante do WhatsApp */
+        /* Estilos para o Botão Flutuante do WhatsApp (VERSÃO SÓ TEXTO) */
         .whatsapp-button {
             position: fixed;
             bottom: 25px;
@@ -153,9 +153,6 @@
             color: white;
             padding: 12px 20px;
             border-radius: 30px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
             z-index: 1001;
             text-decoration: none;
@@ -169,27 +166,19 @@
             box-shadow: 0 6px 15px rgba(0,0,0,0.3);
         }
 
-        .whatsapp-button svg {
-            width: 28px;
-            height: 28px;
-            fill: white;
-        }
-
+        /* Ajustes para mobile */
         @media (max-width: 768px) {
             .whatsapp-button {
-                padding: 15px;
-            }
-            .whatsapp-button span {
-                display: none;
+                padding: 10px 15px;
+                font-size: 0.9rem;
             }
         }
     </style>
 </head>
 <body id="topo">
     <a href="https://chat.whatsapp.com/Lxm8UeCfJLJCSMA10X8Umq" class="whatsapp-button" target="_blank">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.75 13.96c.25.42.44.83.63 1.25.18.4.35.79.49 1.17-.11.45-.75.83-1.48.72-.43-.07-.93-.2-1.5-.39-.33-.11-.67-.24-1.02-.39-.42-.18-.84-.39-1.25-.63-.41-.23-.81-.49-1.18-.77-.37-.28-.71-.59-1.02-.92s-.58-.69-.81-1.07c-.23-.38-.43-.79-.59-1.22-.16-.43-.29-.87-.39-1.32-.1-.45.09-.9.45-1.18.29-.22.62-.31.98-.26.39.06.77.26 1.12.59.32.3.61.68.86 1.12.24.42.46.85.63 1.29.17.43.31.87.42 1.32.1.41.15.82.15 1.22s-.05.79-.15 1.16zm-4.75 7.04c-6.63 0-12-5.37-12-12s5.37-12 12-12 12 5.37 12 12-5.37 12-12 12zm0-2.18c5.41 0 9.82-4.41 9.82-9.82s-4.41-9.82-9.82-9.82-9.82 4.41-9.82 9.82c0 1.75.46 3.42 1.29 4.88l-1.4 4.92 5.03-1.38c1.4.78 3.01 1.22 4.68 1.22z" fill="white"/></svg>
-    <span>Junte-se à Comunidade!</span>
-</a>
+        Junte-se à Comunidade!
+    </a>
 
     <nav class="navbar">
         <a href="index.html" class="home-link">← Voltar à Página Inicial</a>
@@ -458,4 +447,3 @@
 
 </body>
 </html>
-
