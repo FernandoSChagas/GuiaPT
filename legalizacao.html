@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legalização em Portugal - Guia do Imigrante</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -47,6 +48,27 @@
             font-size: 1.2rem;
         }
 
+        /* === NOVO LAYOUT PARA TOPO DE PÁGINAS SEM IMAGEM === */
+        .page-header {
+            background-color: var(--cor-principal); /* Mesma cor do rodapé */
+            color: var(--cor-branco);
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .page-header h1 {
+            color: var(--cor-branco);
+            border-bottom: none; /* Remove a linha de baixo do título */
+            margin-bottom: 0;
+            padding-bottom: 0;
+            font-size: 2.5rem;
+        }
+        .page-header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+        /* === FIM DO NOVO LAYOUT === */
+
         .main-container {
             max-width: 900px;
             margin: 40px auto;
@@ -73,31 +95,18 @@
             border-left: 5px solid var(--cor-alerta);
         }
 
-        h2 {
-            font-size: 1.8rem;
-            color: var(--cor-principal);
-            margin-top: 0;
-        }
-
-        h3 {
-            font-size: 1.3rem;
-            color: var(--cor-principal);
-        }
-        
+        h2 { font-size: 1.8rem; color: var(--cor-principal); margin-top: 0; }
+        h3 { font-size: 1.3rem; color: var(--cor-principal); }
         p, li { font-size: 1rem; }
-        
         ul { padding-left: 20px; }
-
         strong { color: var(--cor-principal); }
-
-        a {
-            color: var(--cor-acento);
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
+        a { color: var(--cor-acento); text-decoration: none; font-weight: 500; }
         a:hover { text-decoration: underline; }
 
+        .checklist { list-style-type: none; padding: 0; }
+        .checklist li { position: relative; padding-left: 30px; margin-bottom: 15px; font-size: 1.1rem; }
+        .checklist li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--cor-acento); font-weight: bold; font-size: 1.2rem; }
+        
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -111,41 +120,17 @@
         .footer-description { font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6; }
         .footer-copyright { margin-top: 30px; font-size: 0.85rem; opacity: 0.7; }
 
+        /* Estilos para o Botão Flutuante do WhatsApp */
+        .whatsapp-button { position: fixed; bottom: 25px; right: 25px; background-color: #25D366; color: white; padding: 12px 20px; border-radius: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 1001; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; }
+        .whatsapp-button:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.3); }
+
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
             .content-card { padding: 20px; }
             h2 { font-size: 1.5rem; }
             h3 { font-size: 1.2rem; }
-        }
-
-        /* Estilos para o Botão Flutuante do WhatsApp (VERSÃO SÓ TEXTO) */
-        .whatsapp-button {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background-color: #25D366;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 30px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            z-index: 1001;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .whatsapp-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-        }
-
-        /* Ajustes para mobile */
-        @media (max-width: 768px) {
-            .whatsapp-button {
-                padding: 10px 15px;
-                font-size: 0.9rem;
-            }
+            .whatsapp-button { padding: 10px 15px; font-size: 0.9rem; }
+            .page-header h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -158,52 +143,46 @@
         <a href="index.html" class="home-link">← Voltar à Página Inicial</a>
     </nav>
     
+    <div class="page-header">
+        <h1>Primeiros Passos e Legalização</h1>
+    </div>
+    
     <div class="main-container">
-        <h1>Legalização em Portugal</h1>
-        
         <div class="content-card alert-card">
-            <h2>⚠️ ATENÇÃO: Novas Regras de Entrada (Outubro de 2025)</h2>
-            <p>O Governo português alterou as regras de entrada para novos imigrantes. A principal mudança é a <strong>exigência de um visto consular obtido no país de origem ANTES de viajar para Portugal</strong> para fins de trabalho, procura de trabalho ou reagrupamento familiar. As antigas "Manifestações de Interesse" e o "Visto de Procura de Trabalho" foram extintos para novos processos.</p>
-        </div>
-
-        <div class="content-card">
-            <h2>A Nova Realidade: Visto Consular Obrigatório</h2>
-            <p>A regra geral agora é clara: para imigrar para Portugal com o objetivo de trabalhar ou viver, é preciso tratar do visto no consulado português do seu país de residência legal.</p>
-            <h3>Principais Vistos para Residir em Portugal:</h3>
+            <h2>⚠️ MUDANÇAS IMPORTANTES NA LEI (Outubro de 2025)</h2>
+            <p><strong>ATENÇÃO:</strong> O Governo português aprovou novas regras que alteram significativamente a entrada de novos imigrantes. As principais mudanças são:</p>
+            <h3>1. Fim do Visto de Procura de Trabalho</h3>
+            <p>O visto que permitia vir a Portugal procurar emprego por 120 dias **foi extinto**.</p>
             <ul>
-                <li><strong>Visto de Trabalho Subordinado:</strong> Para quem já tem um contrato ou uma promessa de contrato de trabalho com uma empresa em Portugal.</li>
-                <li><strong>Visto de Reagrupamento Familiar:</strong> Para familiares de um residente legal em Portugal (cônjuge, filhos, etc.).</li>
-                <li><strong>Visto de Nômade Digital / Trabalho Remoto:</strong> Para quem trabalha remotamente para empresas fora de Portugal.</li>
-                <li><strong>Visto de Estudante:</strong> Para quem vem frequentar um curso numa instituição de ensino portuguesa.</li>
+                <li><strong>Nova Regra:</strong> Para obter um visto de trabalho, agora é geralmente necessário apresentar um <strong>contrato de trabalho ou uma promessa de contrato de trabalho</strong> no consulado português do seu país de origem, antes de viajar.</li>
             </ul>
-            <p>Consulte sempre o site do <a href="https://vistos.mne.gov.pt/pt/" target="_blank">Portal dos Vistos</a> e do consulado português no seu país para ver a lista de documentos exata para cada tipo de visto.</p>
-        </div>
-
-        <div class="content-card alert-card">
-            <h2>Cidadãos da CPLP: Novas Regras</h2>
-            <p>As facilidades para cidadãos da Comunidade dos Países de Língua Portuguesa (CPLP) também mudaram. O pedido de autorização de residência automático e online após a chegada **deixou de ser a via principal**.</p>
+            <h3>2. Novas Regras para Reagrupamento Familiar</h3>
+            <p>O processo para trazer familiares também foi alterado para garantir mais segurança a quem chega.</p>
             <ul>
-                <li><strong>Nova Regra:</strong> Cidadãos CPLP que queiram trabalhar em Portugal também devem, em geral, solicitar um <strong>visto de trabalho CPLP no seu país de origem</strong>. Este processo continua a ser mais simples e rápido do que para outras nacionalidades, mas exige o visto consular prévio.</li>
-                <li><strong>Processos em Andamento:</strong> Pedidos submetidos no portal CPLP antes da nova lei continuam a ser analisados.</li>
+                <li><strong>Nova Regra:</strong> O familiar do titular de uma autorização de residência deve, como regra geral, solicitar um <strong>visto de reagrupamento familiar no consulado português do seu país de origem</strong>. A viagem para Portugal só deve ocorrer após a aprovação deste visto.</li>
             </ul>
         </div>
         
         <div class="content-card">
-            <h2>Checklist Essencial (Após Chegar com Visto)</h2>
-            <p>Depois de chegar a Portugal com o seu visto de residência, estes são os primeiros passos burocráticos que terá de dar:</p>
+            <h2>Checklist Essencial do Recém-Chegado</h2>
+            <p>Estes documentos continuam a ser os pilares da sua vida em Portugal:</p>
             <ol>
                 <li><strong>Obter o NIF (Número de Identificação Fiscal):</strong> Essencial para tudo.</li>
                 <li><strong>Obter o NISS (Número de Identificação da Segurança Social):</strong> Obrigatório para trabalhar e ter acesso a apoios.</li>
                 <li><strong>Atestado de Morada:</strong> Peça na sua Junta de Freguesia. É o seu comprovativo de residência oficial.</li>
-                <li><strong>Troca da Carta de Condução:</strong> Se pretende conduzir em Portugal, verifique os acordos com o seu país e inicie o processo de troca junto do IMT.</li>
             </ol>
         </div>
-        
+
+        <div class="content-card">
+            <h2>Processos Anteriores (Manifestação de Interesse)</h2>
+            <p>A "Manifestação de Interesse" foi extinta para novas submissões em junho de 2024. Se você submeteu o seu processo **antes de 4 de junho de 2024**, ele continua válido e será analisado pela AIMA. Acompanhe o estado do seu processo no <a href="https://sapa.aima.gov.pt/" target="_blank">Portal SAPA</a>.</p>
+        </div>
+
         <div class="content-card">
             <h2>AIMA: A Sua Referência para a Residência</h2>
-            <p>A <strong>AIMA (Agência para a Integração, Migrações e Asilo)</strong> é a entidade responsável pela sua documentação de residência em Portugal após a sua chegada.</p>
+            <p>A <strong>AIMA (Agência para a Integração, Migrações e Asilo)</strong> continua a ser a entidade responsável pela sua documentação de residência em Portugal.</p>
             <ul>
-                <li>O seu visto consular inicial terá uma validade (normalmente 4 meses) dentro da qual deverá fazer um agendamento na AIMA para recolher os dados biométricos e receber o seu primeiro Título de Residência.</li>
+                <li>O seu visto consular inicial terá uma validade dentro da qual deverá fazer um agendamento na AIMA para receber o seu primeiro Título de Residência.</li>
                 <li>Consulte sempre o site oficial <a href="https://aima.gov.pt/" target="_blank">aima.gov.pt</a> para informações e agendamentos.</li>
             </ul>
         </div>
