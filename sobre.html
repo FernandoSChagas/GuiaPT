@@ -5,10 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Nós - GuiaPT</title>
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos incluídos na página para facilitar */
+        :root {
+            --cor-principal: #2d3748;
+            --cor-secundaria: #4a5568;
+            --cor-acento: #38b2ac;
+            --cor-fundo: #f7fafc;
+            --cor-branco: #ffffff;
+            --sombra-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        body { font-family: 'Poppins', sans-serif; background-color: var(--cor-fundo); color: var(--cor-secundaria); margin: 0; line-height: 1.7; }
+        .about-page { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+        .page-header { background-color: var(--cor-principal); color: var(--cor-branco); text-align: center; padding: 40px 20px; }
+        .page-header h1 { color: var(--cor-branco); font-size: 2.5rem; display: inline-block; margin: 0; border-bottom: 3px solid var(--cor-acento); padding-bottom: 10px; }
+        .navbar { background-color: var(--cor-branco); padding: 15px 20px; box-shadow: var(--sombra-card); display: flex; justify-content: space-between; align-items: center; }
+        .navbar a.home-link { color: var(--cor-principal); text-decoration: none; font-weight: 700; font-size: 1.2rem; }
+
+        .about-images { display: flex; gap: 30px; justify-content: center; margin-bottom: 30px; flex-wrap: wrap; }
+        .team-member { text-align: center; }
+        .team-member img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 4px solid var(--cor-acento); box-shadow: var(--sombra-card); }
+        .team-member h4 { color: var(--cor-principal); margin-top: 15px; margin-bottom: 5px; font-size: 1.2rem; }
+        .team-member p { font-size: 0.9rem; margin: 0; }
+        .about-text p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 15px; text-align: justify; }
+        .affiliate-disclosure { background-color: #f0f9ff; padding: 20px; margin-top: 40px; border-radius: 8px; border-left: 5px solid var(--cor-acento); }
+        .affiliate-disclosure h3 { margin: 0 0 10px 0; }
+
+        footer { text-align: center; padding: 40px 20px; margin-top: 50px; background-color: var(--cor-principal); color: rgba(255, 255, 255, 0.8); border-top: 4px solid var(--cor-acento); }
+        .footer-container { max-width: 800px; margin: 0 auto; }
+        .footer-links a { color: var(--cor-branco); text-decoration: none; margin: 0 10px; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--cor-acento); text-decoration: underline; }
+        .footer-copyright { margin-top: 30px; font-size: 0.85rem; opacity: 0.7; }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -47,6 +79,10 @@
     <footer>
         <div class="footer-container">
             <h3>GuiaPT</h3>
+            <p class="footer-description">O seu portal de apoio ao imigrante em Portugal.</p>
+            <div class="footer-links">
+                <a href="sobre.html">Sobre Nós</a>
+            </div>
             <p class="footer-copyright">© 2025 Fernando Chagas. Todos os direitos reservados.</p>
         </div>
     </footer>
