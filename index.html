@@ -28,7 +28,6 @@
             line-height: 1.7;
         }
 
-        /* Estilos do Cabeçalho com Imagem de Fundo */
         header {
             background: linear-gradient(rgba(45, 55, 72, 0.7), rgba(45, 55, 72, 0.7)), url('header-portugal.PNG') no-repeat center center;
             background-size: cover;
@@ -61,40 +60,12 @@
             padding: 0 20px;
         }
 
-        /* Estilo para a Navegação Flutuante no Topo */
-        .top-nav-guia {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 9999;
-        }
-        .top-nav-guia a {
-            background-color: var(--cor-acento);
-            color: var(--cor-branco);
-            padding: 8px 15px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-            transition: background-color 0.3s;
-        }
-        .top-nav-guia a:hover {
-            background-color: #2c9a94; 
-        }
-        @media (max-width: 768px) {
-            .top-nav-guia { top: 10px; right: 10px; }
-            .top-nav-guia a { padding: 5px 10px; font-size: 0.9rem; }
-            header { padding: 60px 15px; }
-            header h1 { font-size: 2.5rem; }
-            .main-container { margin-top: 25px; padding: 0 15px; }
-        }
-
-        /* Estilos dos Cartões */
         .section-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
         }
+
         .section-card {
             background-color: var(--cor-branco);
             border-radius: 12px;
@@ -107,32 +78,69 @@
             display: flex;
             flex-direction: column;
         }
+
         .section-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             border-bottom-color: var(--cor-acento);
         }
-        .section-card svg { width: 48px; height: 48px; fill: var(--cor-acento); margin-bottom: 15px; }
-        .section-card h2 { font-size: 1.5rem; color: var(--cor-principal); margin: 0 0 10px 0; }
-        .section-card p { font-size: 0.95rem; margin: 0; flex-grow: 1; }
         
-        /* Estilos Comuns */
-        .whatsapp-button { position: fixed; bottom: 25px; right: 25px; background-color: #25D366; color: white; padding: 12px 20px; border-radius: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 1001; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; }
-        .whatsapp-button:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.3); }
-        footer { text-align: center; padding: 40px 20px; margin-top: 50px; background-color: var(--cor-principal); color: rgba(255, 255, 255, 0.8); border-top: 4px solid var(--cor-acento); }
+        .section-card svg {
+            width: 48px;
+            height: 48px;
+            fill: var(--cor-acento);
+            margin-bottom: 15px;
+        }
+
+        .section-card h2 {
+            font-size: 1.5rem;
+            color: var(--cor-principal);
+            margin: 0 0 10px 0;
+        }
+
+        .section-card p {
+            font-size: 0.95rem;
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
+            background-color: var(--cor-principal);
+            color: rgba(255, 255, 255, 0.8);
+            border-top: 4px solid var(--cor-acento);
+        }
         .footer-container { max-width: 800px; margin: 0 auto; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { 
+            color: var(--cor-branco);
+            text-decoration: none; 
+            margin: 0 10px; 
+            transition: color 0.3s ease; 
+        }
+        .footer-links a:hover { color: var(--cor-acento); text-decoration: underline; }
+        
         footer h3 { font-size: 1.5rem; font-weight: 600; color: var(--cor-branco); margin: 0 0 10px 0; }
         .footer-description { font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6; }
         .footer-copyright { margin-top: 30px; font-size: 0.85rem; opacity: 0.7; }
+
+        /* Regras de Responsividade */
+        @media (max-width: 768px) {
+            header { padding: 60px 15px; }
+            header h1 { font-size: 2.5rem; }
+            .main-container { margin-top: 25px; padding: 0 15px; }
+        }
+
+        /* Estilos Comuns */
+        .whatsapp-button { position: fixed; bottom: 25px; right: 25px; background-color: #25D366; color: white; padding: 12px 20px; border-radius: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 1001; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; }
+        .whatsapp-button:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.3); }
         
     </style>
 </head>
 <body id="topo">
 
-    <nav class="top-nav-guia">
-        <a href="sobre.html">Sobre Nós</a>
-    </nav>
-    
     <a href="https://chat.whatsapp.com/Lxm8UeCfJLJCSMA10X8Umq" class="whatsapp-button" target="_blank">
         Junte-se à Comunidade!
     </a>
@@ -142,7 +150,7 @@
         <symbol id="icon-jobs" viewBox="0 0 24 24"><path fill="currentColor" d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM10 4h4v2h-4V4zm10 17H4V8h16v13z"/></symbol>
         <symbol id="icon-housing" viewBox="0 0 24 24"><path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8h5z"/></symbol>
         <symbol id="icon-daily-life" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8zm-2.5-4h5c.83 0 1.5-.67 1.5-1.5v-3c0-.83-.67-1.5-1.5-1.5h-5c-.83 0-1.5.67-1.5 1.5v3c0 .83.67 1.5 1.5 1.5z"/></symbol>
-        <symbol id="icon-language" viewBox="0 0 24 24"><path fill="currentColor" d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0-2 .9-2 2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></symbol>
+        <symbol id="icon-language" viewBox="0 0 24 24"><path fill="currentColor" d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></symbol>
         <symbol id="icon-community" viewBox="0 0 24 24"><path fill="currentColor" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05c1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></symbol>
     </svg>
 
@@ -197,6 +205,9 @@
         <div class="footer-container">
             <h3>Portal de Apoio ao Imigrante</h3>
             <p class="footer-description">Este guia foi compilado para ajudar na sua jornada em Portugal. Lembre-se que as leis e procedimentos podem mudar, por isso, confirme sempre a informação nos sites oficiais.</p>
+            <div class="footer-links">
+                <a href="sobre.html">Sobre Nós</a>
+            </div>
             <p class="footer-copyright">© 2025 Fernando Chagas. Todos os direitos reservados.</p>
         </div>
     </footer>
