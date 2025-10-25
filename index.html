@@ -103,7 +103,8 @@
             margin: 0;
             flex-grow: 1;
         }
-
+        
+        /* Estilos do Rodapé - CORRIGIDOS AQUI */
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -113,26 +114,26 @@
             border-top: 4px solid var(--cor-acento);
         }
         .footer-container { max-width: 800px; margin: 0 auto; }
-        .footer-links { margin-bottom: 20px; }
+        .footer-links { margin-top: 15px; margin-bottom: 10px; }
         .footer-links a { 
             color: var(--cor-branco);
             text-decoration: none; 
             margin: 0 10px; 
             transition: color 0.3s ease; 
+            font-weight: 500;
         }
         .footer-links a:hover { color: var(--cor-acento); text-decoration: underline; }
         
         footer h3 { font-size: 1.5rem; font-weight: 600; color: var(--cor-branco); margin: 0 0 10px 0; }
-        .footer-description { font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6; }
-        .footer-copyright { margin-top: 30px; font-size: 0.85rem; opacity: 0.7; }
+        .footer-description { font-size: 0.95rem; margin-bottom: 15px; line-height: 1.6; }
+        .footer-copyright { font-size: 0.85rem; opacity: 0.7; }
 
         /* Regras de Responsividade */
         @media (max-width: 768px) {
-            .top-nav-guia { top: 10px; right: 10px; }
-            .top-nav-guia a { padding: 5px 10px; font-size: 0.9rem; }
             header { padding: 60px 15px; }
             header h1 { font-size: 2.5rem; }
             .main-container { margin-top: 25px; padding: 0 15px; }
+            .top-nav-guia a { padding: 5px 10px; font-size: 0.9rem; }
         }
 
         /* Estilos Comuns */
@@ -143,10 +144,6 @@
 </head>
 <body id="topo">
 
-    <nav class="top-nav-guia">
-        <a href="sobre.html">Sobre Nós</a>
-    </nav>
-    
     <a href="https://chat.whatsapp.com/Lxm8UeCfJLJCSMA10X8Umq" class="whatsapp-button" target="_blank">
         Junte-se à Comunidade!
     </a>
